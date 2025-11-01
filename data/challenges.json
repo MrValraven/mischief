@@ -1,0 +1,14 @@
+[
+  { "id": 0, "text": "Tell a spooky story to someone", "difficulty": "easy" },
+  { "id": 1, "text": "Do 10 spooky dance moves", "difficulty": "easy" },
+  { "id": 2, "text": "Make a scary face at 3 people", "difficulty": "medium" },
+  { "id": 3, "text": "Write a Halloween poem", "difficulty": "medium" },
+  { "id": 4, "text": "Howl like a werewolf for 30 seconds", "difficulty": "easy" },
+  { "id": 5, "text": "Decorate something spooky", "difficulty": "medium" },
+  { "id": 6, "text": "Hide and give someone a friendly scare", "difficulty": "medium" },
+  { "id": 7, "text": "Create a silly Halloween costume from household items", "difficulty": "hard" },
+  { "id": 8, "text": "Tell a joke in a spooky voice", "difficulty": "easy" },
+  { "id": 9, "text": "Challenge someone to a staring contest (winner gets a prize)", "difficulty": "medium" },
+  { "id": 10, "text": "Design your dream haunted house on paper", "difficulty": "medium" },
+  { "id": 11, "text": "Do the monster mash dance", "difficulty": "easy" }
+]
