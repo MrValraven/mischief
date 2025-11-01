@@ -1,50 +1,54 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 interface Challenge {
-  id: number
-  text: string
-  difficulty: "easy" | "medium" | "hard"
+  id: number;
+  text: string;
+  difficulty: "easy" | "medium" | "hard";
 }
 
 interface SpinningWheelProps {
-  challenges: Challenge[]
-  onSpin: (challengeId: number) => void
+  challenges: Challenge[];
+  onSpin: (challengeId: number) => void;
 }
 
-export default function SpinningWheel({ challenges, onSpin }: SpinningWheelProps) {
-  const [isSpinning, setIsSpinning] = useState(false)
-  const [rotation, setRotation] = useState(0)
-  const [showSpark, setShowSpark] = useState(false)
+export default function SpinningWheel({
+  challenges,
+  onSpin,
+}: SpinningWheelProps) {
+  const [isSpinning, setIsSpinning] = useState(false);
+  const [rotation, setRotation] = useState(0);
+  const [showSpark, setShowSpark] = useState(false);
 
   const handleSpin = () => {
-    if (isSpinning) return
+    if (isSpinning) return;
 
-    setIsSpinning(true)
-    setShowSpark(true)
+    setIsSpinning(true);
+    setShowSpark(true);
 
     // Generate random spin (minimum 5 full rotations + random amount)
-    const extraRotation = Math.random() * 360
-    const totalRotation = rotation + 1800 + extraRotation
-    setRotation(totalRotation)
+    const extraRotation = Math.random() * 360;
+    const totalRotation = rotation + 1800 + extraRotation;
+    setRotation(totalRotation);
 
     // Determine which challenge was selected
-    const normalizedRotation = totalRotation % 360
-    const segmentSize = 360 / challenges.length
-    const selectedSegment = Math.floor((360 - normalizedRotation) / segmentSize) % challenges.length
+    const normalizedRotation = totalRotation % 360;
+    const segmentSize = 360 / challenges.length;
+    const selectedSegment =
+      Math.floor((360 - normalizedRotation) / segmentSize) % challenges.length;
 
     // Trigger callback after spin animation completes
     setTimeout(() => {
-      onSpin(selectedSegment)
-      setIsSpinning(false)
-    }, 2500)
+      onSpin(selectedSegment);
+      setIsSpinning(false);
+    }, 2500);
 
-    setTimeout(() => setShowSpark(false), 2500)
-  }
+    setTimeout(() => setShowSpark(false), 2500);
+  };
 
-  const segmentSize = 360 / challenges.length
+  const segmentSize = 360 / challenges.length;
 
   const colors = [
     "#c41e3a", // crimson
@@ -59,7 +63,7 @@ export default function SpinningWheel({ challenges, onSpin }: SpinningWheelProps
     "#ff8800", // orange
     "#cc00cc", // magenta
     "#ff3300", // bright red
-  ]
+  ];
 
   return (
     <div className="flex flex-col items-center gap-8">
@@ -86,34 +90,42 @@ export default function SpinningWheel({ challenges, onSpin }: SpinningWheelProps
         {/* Wheel SVG with enhanced styling */}
         <svg
           viewBox="0 0 400 400"
-          className={`w-full h-full transition-transform drop-shadow-2xl ${isSpinning ? "duration-[2.5s] ease-out" : "duration-300 ease-out"}`}
+          className={`w-full h-full transition-transform drop-shadow-2xl ${
+            isSpinning ? "duration-[2.5s] ease-out" : "duration-300 ease-out"
+          }`}
           style={{
             transform: `rotate(${rotation}deg)`,
             filter: "drop-shadow(0 0 30px rgba(249, 115, 22, 0.4))",
           }}
         >
           {challenges.map((challenge, index) => {
-            const startAngle = index * segmentSize * (Math.PI / 180)
-            const endAngle = (index + 1) * segmentSize * (Math.PI / 180)
+            const startAngle = index * segmentSize * (Math.PI / 180);
+            const endAngle = (index + 1) * segmentSize * (Math.PI / 180);
 
-            const x1 = 200 + 150 * Math.cos(startAngle)
-            const y1 = 200 + 150 * Math.sin(startAngle)
-            const x2 = 200 + 150 * Math.cos(endAngle)
-            const y2 = 200 + 150 * Math.sin(endAngle)
+            const x1 = 200 + 150 * Math.cos(startAngle);
+            const y1 = 200 + 150 * Math.sin(startAngle);
+            const x2 = 200 + 150 * Math.cos(endAngle);
+            const y2 = 200 + 150 * Math.sin(endAngle);
 
-            const largeArc = segmentSize > 180 ? 1 : 0
-            const pathD = `M 200 200 L ${x1} ${y1} A 150 150 0 ${largeArc} 1 ${x2} ${y2} Z`
+            const largeArc = segmentSize > 180 ? 1 : 0;
+            const pathD = `M 200 200 L ${x1} ${y1} A 150 150 0 ${largeArc} 1 ${x2} ${y2} Z`;
 
-            const midAngle = startAngle + segmentSize * 0.5 * (Math.PI / 180)
-            const textX = 200 + 95 * Math.cos(midAngle)
-            const textY = 200 + 95 * Math.sin(midAngle)
-            const textRotation = index * segmentSize + segmentSize / 2
+            const midAngle = startAngle + segmentSize * 0.5 * (Math.PI / 180);
+            const textX = 200 + 95 * Math.cos(midAngle);
+            const textY = 200 + 95 * Math.sin(midAngle);
+            const textRotation = index * segmentSize + segmentSize / 2;
 
-            const segmentColor = colors[index % colors.length]
+            const segmentColor = colors[index % colors.length];
 
             return (
               <g key={challenge.id}>
-                <path d={pathD} fill={segmentColor} stroke="#000" strokeWidth="3" style={{ opacity: 0.85 }} />
+                <path
+                  d={pathD}
+                  fill={segmentColor}
+                  stroke="#000"
+                  strokeWidth="3"
+                  style={{ opacity: 0.85 }}
+                />
                 <text
                   x={textX}
                   y={textY}
@@ -129,18 +141,38 @@ export default function SpinningWheel({ challenges, onSpin }: SpinningWheelProps
                   {challenge.text.split(" ").slice(0, 3).join("\n")}
                 </text>
               </g>
-            )
+            );
           })}
 
           {/* Center circle with gradient */}
           <defs>
             <radialGradient id="centerGradient" cx="40%" cy="40%">
-              <stop offset="0%" style={{ stopColor: "#fbbf24", stopOpacity: 1 }} />
-              <stop offset="100%" style={{ stopColor: "#f59e0b", stopOpacity: 1 }} />
+              <stop
+                offset="0%"
+                style={{ stopColor: "#fbbf24", stopOpacity: 1 }}
+              />
+              <stop
+                offset="100%"
+                style={{ stopColor: "#f59e0b", stopOpacity: 1 }}
+              />
             </radialGradient>
           </defs>
-          <circle cx="200" cy="200" r="35" fill="url(#centerGradient)" stroke="#1f2937" strokeWidth="3" />
-          <circle cx="200" cy="200" r="20" fill="#fcd34d" stroke="#1f2937" strokeWidth="1" />
+          <circle
+            cx="200"
+            cy="200"
+            r="35"
+            fill="url(#centerGradient)"
+            stroke="#1f2937"
+            strokeWidth="3"
+          />
+          <circle
+            cx="200"
+            cy="200"
+            r="20"
+            fill="#fcd34d"
+            stroke="#1f2937"
+            strokeWidth="1"
+          />
         </svg>
       </div>
 
@@ -154,12 +186,17 @@ export default function SpinningWheel({ challenges, onSpin }: SpinningWheelProps
           <span className="flex items-center gap-2">
             <span className="inline-block animate-spin">⚡</span>
             Spinning...
-            <span className="inline-block animate-spin" style={{ animationDelay: "0.5s" }}>
+            <span
+              className="inline-block animate-spin"
+              style={{ animationDelay: "0.5s" }}
+            >
               ⚡
             </span>
           </span>
         ) : (
-          <span className="flex items-center justify-center gap-2">✨ SPIN THE WHEEL ✨</span>
+          <span className="flex items-center justify-center gap-2">
+            ✨ SPIN THE WHEEL ✨
+          </span>
         )}
       </Button>
 
@@ -168,5 +205,5 @@ export default function SpinningWheel({ challenges, onSpin }: SpinningWheelProps
         🎃 Click to spin and discover your Halloween challenge 🎃
       </p>
     </div>
-  )
+  );
 }

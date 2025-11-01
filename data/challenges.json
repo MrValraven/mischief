@@ -1,14 +1,378 @@
 [
-  { "id": 0, "text": "Tell a spooky story to someone", "difficulty": "easy" },
-  { "id": 1, "text": "Do 10 spooky dance moves", "difficulty": "easy" },
-  { "id": 2, "text": "Make a scary face at 3 people", "difficulty": "medium" },
-  { "id": 3, "text": "Write a Halloween poem", "difficulty": "medium" },
-  { "id": 4, "text": "Howl like a werewolf for 30 seconds", "difficulty": "easy" },
-  { "id": 5, "text": "Decorate something spooky", "difficulty": "medium" },
-  { "id": 6, "text": "Hide and give someone a friendly scare", "difficulty": "medium" },
-  { "id": 7, "text": "Create a silly Halloween costume from household items", "difficulty": "hard" },
-  { "id": 8, "text": "Tell a joke in a spooky voice", "difficulty": "easy" },
-  { "id": 9, "text": "Challenge someone to a staring contest (winner gets a prize)", "difficulty": "medium" },
-  { "id": 10, "text": "Design your dream haunted house on paper", "difficulty": "medium" },
-  { "id": 11, "text": "Do the monster mash dance", "difficulty": "easy" }
+  {
+    "id": 0,
+    "text": "Enchant someone at the Station of Glamours",
+    "difficulty": "easy"
+  },
+  {
+    "id": 1,
+    "text": "Take a picture with someone you met in the Mystique Gallery",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "text": "Leave a note in the Altar of Secrets",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3,
+    "text": "Create a potion in the Blood Bar",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "text": "Ask someone to teach you a small gesture that means “trust.”",
+    "difficulty": "easy"
+  },
+  {
+    "id": 5,
+    "text": "Ask someone to tell you the first word that comes to mind when they see you.",
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "text": "Choose someone to teach you a secret gesture that only the two of you know.",
+    "difficulty": "medium"
+  },
+  { "id": 7, "text": "Steal a kiss from a vampire", "difficulty": "hard" },
+  {
+    "id": 8,
+    "text": "Steal a kiss from a creature of Mystique",
+    "difficulty": "easy"
+  },
+  {
+    "id": 9,
+    "text": "Give a tight hug to the person who gives off the most mystical and safe energy",
+    "difficulty": "medium"
+  },
+  {
+    "id": 10,
+    "text": "Ask someone 'What’s one small thing that always feels sensual to you?'",
+    "difficulty": "medium"
+  },
+  {
+    "id": 12,
+    "text": "Leave a secret note somewhere in the house.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 13,
+    "text": "Trade an object you carry with someone else; don’t explain why.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 14,
+    "text": "Ask someone if you can read their palm. Tell them what the future reserves for them tonight.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 15,
+    "text": "Ask a vampire for a mark — lipstick, bite, or both.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 16,
+    "text": "Give someone a compliment that sounds like a spell.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 17,
+    "text": "Let someone choose a part of you to bless — forehead, wrist, heart, or lips.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 18,
+    "text": "Cast a quick “charm” on the group — invent a word and make them repeat it.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 19,
+    "text": "Draw a sigil on someone’s wrist using invisible ink (your fingertip).",
+    "difficulty": "easy"
+  },
+  {
+    "id": 20,
+    "text": "Find a witch and ask them to bless your drink.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 21,
+    "text": "Steal a sip from someone’s glass — only if they let you.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 22,
+    "text": "Dare someone to tell you what they desire most tonight.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 23,
+    "text": "Find the most mysterious guest and ask them for a curse or blessing.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 24,
+    "text": "Let the person beside you decide your next mischief.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 25,
+    "text": "Find a stranger and tell them their aura tastes like something enchanting.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 26,
+    "text": "Ask a vampire for a kiss. Or offer one.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 27,
+    "text": "Find someone wearing black and tell them what power you think they have.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 28,
+    "text": "Whisper a spell into someone’s drink before they take a sip.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 29,
+    "text": "Speak in riddles for the next five minutes.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 30,
+    "text": "Pretend to be a famous witch and give someone a ridiculous prophecy.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 31,
+    "text": "Find the tallest person in the room and ask them to guard your secret.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 32,
+    "text": "Form a “temporary coven” of three and make up a spell together.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 33,
+    "text": "Declare a random object sacred and protect it for ten minutes.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 34,
+    "text": "Make up a scandal about the host. Spread it once, never explain.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 35,
+    "text": "Ask someone what they dreamt last night. Pretend it was a prophecy.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 36,
+    "text": "Find someone who hasn’t spoken much and ask them to share a secret gesture with you.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 37,
+    "text": "Leave a compliment written on a mirror. No signature.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 38,
+    "text": "Ask someone to describe the first thing they noticed about you.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 39,
+    "text": "Ask two people to teach you a secret handshake.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 40,
+    "text": "Whisper a wish into someone’s hands and close their fingers around it.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 41,
+    "text": "Ask for a single word that feels like a kiss.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 42,
+    "text": "Find someone with red lips and ask what they’ve cursed tonight.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 43,
+    "text": "Take a photo with someone you find magnetic. Don’t smile.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 44,
+    "text": "Start a rumor that a ghost has joined the party.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 45,
+    "text": "Swap drinks with someone and make a toast in another language (real or not).",
+    "difficulty": "easy"
+  },
+  {
+    "id": 46,
+    "text": "Find someone with glitter and make them your accomplice. The night should be full of magic.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 47,
+    "text": "Find someone whose energy feels magnetic — tell them you feel the pull.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 48,
+    "text": "Ask someone to describe how they’d hex you if they could.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 49,
+    "text": "Let someone draw a small mark on your skin and call it a bond.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 50,
+    "text": "Find someone who smells divine. Tell them what memory their scent stirs.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 51,
+    "text": "Whisper “bite me” to someone who looks like they might.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 52,
+    "text": "Tell someone their aura glows red tonight.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 53,
+    "text": "Ask a stranger what sin you look most capable of.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 54,
+    "text": "Find someone whose hands you want to hold — then take them.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 55,
+    "text": "What color do you feel like right now — and why?",
+    "difficulty": "easy"
+  },
+  {
+    "id": 56,
+    "text": "Ask someone when do they feel most powerful?",
+    "difficulty": "easy"
+  },
+  {
+    "id": 57,
+    "text": "Ask someone 'What kind of magic do you wish existed, and what would you use it for?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 58,
+    "text": "Ask someone 'If you were to charm someone, how would you do it?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 59,
+    "text": "Ask someone 'What’s your most irresistible trait, according to you?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 60,
+    "text": "Ask someone 'If you could enchant one person here tonight, who would it be?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 61,
+    "text": "Ask someone 'How do you like to be desired?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 62,
+    "text": "Ask someone 'What do you find most magnetic about someone?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 63,
+    "text": "Find someone who shares your element — fire, water, air, or earth.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 64,
+    "text": "Ask someone 'If you had a familiar (animal companion), what would it be?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 65,
+    "text": "Find your mirror — someone whose vibe feels like your reflection.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 66,
+    "text": "Ask someone 'What’s your most beautiful weakness?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 67,
+    "text": "Ask someone 'What scent should someone wear to summon you?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 68,
+    "text": "Ask someone 'What do you want people to feel when they look at you?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 69,
+    "text": "Ask someone 'If you had to pick a poison, what would it taste like?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 70,
+    "text": "Ask someone to tell you their favorite superstition",
+    "difficulty": "easy"
+  },
+  {
+    "id": 71,
+    "text": "Ask someone to describe your energy in three words.",
+    "difficulty": "easy"
+  },
+  {
+    "id": 72,
+    "text": "Ask someone 'If you could steal one thing from the moon, what would it be?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 73,
+    "text": "Ask someone 'What kind of weather feels like your personality?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 74,
+    "text": "Ask someone 'If you could speak with the stars for one minute, what would you ask?'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 75,
+    "text": "Ask someone 'If a witch was trying to summon you, what 3 things would she put in the summoning circle'",
+    "difficulty": "easy"
+  },
+  {
+    "id": 76,
+    "text": "Ask someone 'What kind of glance says more than words?'",
+    "difficulty": "easy"
+  }
 ]
