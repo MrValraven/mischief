@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Key, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 export interface Challenge {
@@ -10,7 +10,7 @@ export interface Challenge {
 }
 
 interface SpinningWheelProps {
-  challenges: Challenge[];
+  challenges: any;
   onSpin: (challengeId: number) => void;
 }
 
@@ -98,51 +98,56 @@ export default function SpinningWheel({
             filter: "drop-shadow(0 0 30px rgba(249, 115, 22, 0.4))",
           }}
         >
-          {challenges.map((challenge, index) => {
-            const startAngle = index * segmentSize * (Math.PI / 180);
-            const endAngle = (index + 1) * segmentSize * (Math.PI / 180);
+          {challenges.map(
+            (
+              challenge: { id: Key | null | undefined; text: string },
+              index: number
+            ) => {
+              const startAngle = index * segmentSize * (Math.PI / 180);
+              const endAngle = (index + 1) * segmentSize * (Math.PI / 180);
 
-            const x1 = 200 + 150 * Math.cos(startAngle);
-            const y1 = 200 + 150 * Math.sin(startAngle);
-            const x2 = 200 + 150 * Math.cos(endAngle);
-            const y2 = 200 + 150 * Math.sin(endAngle);
+              const x1 = 200 + 150 * Math.cos(startAngle);
+              const y1 = 200 + 150 * Math.sin(startAngle);
+              const x2 = 200 + 150 * Math.cos(endAngle);
+              const y2 = 200 + 150 * Math.sin(endAngle);
 
-            const largeArc = segmentSize > 180 ? 1 : 0;
-            const pathD = `M 200 200 L ${x1} ${y1} A 150 150 0 ${largeArc} 1 ${x2} ${y2} Z`;
+              const largeArc = segmentSize > 180 ? 1 : 0;
+              const pathD = `M 200 200 L ${x1} ${y1} A 150 150 0 ${largeArc} 1 ${x2} ${y2} Z`;
 
-            const midAngle = startAngle + segmentSize * 0.5 * (Math.PI / 180);
-            const textX = 200 + 95 * Math.cos(midAngle);
-            const textY = 200 + 95 * Math.sin(midAngle);
-            const textRotation = index * segmentSize + segmentSize / 2;
+              const midAngle = startAngle + segmentSize * 0.5 * (Math.PI / 180);
+              const textX = 200 + 95 * Math.cos(midAngle);
+              const textY = 200 + 95 * Math.sin(midAngle);
+              const textRotation = index * segmentSize + segmentSize / 2;
 
-            const segmentColor = colors[index % colors.length];
+              const segmentColor = colors[index % colors.length];
 
-            return (
-              <g key={challenge.id}>
-                <path
-                  d={pathD}
-                  fill={segmentColor}
-                  stroke="#000"
-                  strokeWidth="3"
-                  style={{ opacity: 0.85 }}
-                />
-                <text
-                  x={textX}
-                  y={textY}
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  fontSize="11"
-                  fontWeight="bold"
-                  fill="white"
-                  transform={`rotate(${textRotation} ${textX} ${textY})`}
-                  className="pointer-events-none select-none font-sans"
-                  style={{ textShadow: "0 2px 4px rgba(0,0,0,0.8)" }}
-                >
-                  {challenge.text.split(" ").slice(0, 3).join("\n")}
-                </text>
-              </g>
-            );
-          })}
+              return (
+                <g key={challenge.id}>
+                  <path
+                    d={pathD}
+                    fill={segmentColor}
+                    stroke="#000"
+                    strokeWidth="3"
+                    style={{ opacity: 0.85 }}
+                  />
+                  <text
+                    x={textX}
+                    y={textY}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    fontSize="11"
+                    fontWeight="bold"
+                    fill="white"
+                    transform={`rotate(${textRotation} ${textX} ${textY})`}
+                    className="pointer-events-none select-none font-sans"
+                    style={{ textShadow: "0 2px 4px rgba(0,0,0,0.8)" }}
+                  >
+                    {challenge.text.split(" ").slice(0, 3).join("\n")}
+                  </text>
+                </g>
+              );
+            }
+          )}
 
           {/* Center circle with gradient */}
           <defs>

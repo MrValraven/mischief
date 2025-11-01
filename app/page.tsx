@@ -54,10 +54,7 @@ export default function Home() {
         </div>
 
         {!showChallenge ? (
-          <SpinningWheel
-            challenges={challenges as Challenge[]}
-            onSpin={handleSpin}
-          />
+          <SpinningWheel challenges={challenges} onSpin={handleSpin} />
         ) : (
           <ChallengeDisplay
             challenge={currentChallenge}
