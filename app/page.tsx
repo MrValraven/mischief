@@ -4,6 +4,7 @@ import { useState } from "react";
 import SpinningWheel from "@/components/spinning-wheel";
 import ChallengeDisplay from "@/components/challenge-display";
 import challenges from "@/data/challenges.json";
+import { Challenge } from "@/components/spinning-wheel";
 
 export default function Home() {
   const [currentChallenge, setCurrentChallenge] = useState<{
@@ -53,7 +54,10 @@ export default function Home() {
         </div>
 
         {!showChallenge ? (
-          <SpinningWheel challenges={challenges} onSpin={handleSpin} />
+          <SpinningWheel
+            challenges={challenges as Challenge[]}
+            onSpin={handleSpin}
+          />
         ) : (
           <ChallengeDisplay
             challenge={currentChallenge}

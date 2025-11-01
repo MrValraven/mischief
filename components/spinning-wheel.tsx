@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-interface Challenge {
+export interface Challenge {
   id: number;
   text: string;
   difficulty: "easy" | "medium" | "hard";
