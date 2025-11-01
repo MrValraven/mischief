@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export interface Challenge {
   id: number;
   text: string;
-  difficulty: "easy" | "medium" | "hard";
+  difficulty: string;
 }
 
 interface SpinningWheelProps {
